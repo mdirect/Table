@@ -10,9 +10,14 @@ public class Table {
     private String  tabletop_material;
     private String  tabletop_colour;
 
-    Table(int count_legs_set) {
-        count_legs = count_legs_set;
-    }
+    /*  Задание:
+        1. Пример инкапсуляции
+        2. Модификаторы доступа
+        3. Ключевые слова (static, final ...)
+        4. Запретить дефолт Table()
+        5. Защита от кривого стола
+     */
+
 
     Table(int count_legs_set,
           String tabletop_material_set) {
