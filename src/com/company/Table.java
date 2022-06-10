@@ -1,115 +1,92 @@
 package com.company;
 
 public class Table {
-    private int     count_legs;
-    private int     high;
-    private float   lenght;
-    private float   widht;
-    private String  made_in;
-    private String  legs_material;
-    private String  tabletop_material;
-    private String  tabletop_colour;
+    private Legs        legs;
+    private Tabletop    tabletop;
+    private String      made_in;
+    int weight;
 
-    /*  Задание:
-        1. Пример инкапсуляции
-        2. Модификаторы доступа
-        3. Ключевые слова (static, final ...)
-        4. Запретить дефолт Table()
-        5. Защита от кривого стола
-     */
+//    Table(Legs legs, Tabletop tabletop)
 
-
-    Table(int count_legs_set,
-          String tabletop_material_set) {
-        count_legs = count_legs_set;
-        tabletop_material = tabletop_material_set;
+    int set_weight(){
+        return weight;
     }
 
-    Table(int count_legs_set,
-          String tabletop_material_set,
-          String made_in_set) {
-        count_legs = count_legs_set;
-        tabletop_material = tabletop_material_set;
-        made_in = made_in_set;
+    Table(int count_legs) {
+        this.legs = new Legs();
+
+        this.legs.set_count_legs(count_legs);
     }
 
-    Table(int count_legs_set,
-          int high_set,
-          int lenght_set,
-          int widht_set,
-          String tabletop_material_set,
-          String made_in_set) {
-        count_legs = count_legs_set;
-        high = high_set;
-        lenght = lenght_set;
-        widht = widht_set;
-        tabletop_material = tabletop_material_set;
-        made_in = made_in_set;
+    Table(int count_legs, int high) {
+        this.legs = new Legs();
+
+        this.legs.set_count_legs(count_legs);
+        this.legs.set_high(high);
     }
 
-    Table(int count_legs_set,
-          int high_set,
-          int lenght_set,
-          int widht_set,
-          String tabletop_material_set,
-          String legs_material_set,
-          String tabletop_colour_set,
-          String made_in_set) {
-        count_legs = count_legs_set;
-        high = high_set;
-        lenght = lenght_set;
-        widht = widht_set;
-        tabletop_material = tabletop_material_set;
-        tabletop_colour = tabletop_colour_set;
-        legs_material = legs_material_set;
-        made_in = made_in_set;
+    Table(int count_legs, int high, float lenght, float wight, String tabletop_material) {
+        this.legs = new Legs();
+        this.tabletop = new Tabletop();
+
+        this.legs.set_count_legs(count_legs);
+        this.legs.set_high(high);
+        this.tabletop.set_lenght(lenght);
+        this.tabletop.set_widht(wight);
+        this.tabletop.set_tabletop_material(tabletop_material);
     }
 
-    int get_count_legs() {
-        return count_legs;
-    }
+    Table(int count_legs, int high, float lenght, float wight, String tabletop_material, String made_in) {
+        this.legs = new Legs();
+        this.tabletop = new Tabletop();
 
-    int get_high() {
-        return high;
-    }
-
-    float get_lenght() {
-        return lenght;
-    }
-
-    float get_widht() {
-        return widht;
+        this.legs.set_count_legs(count_legs);
+        this.legs.set_high(high);
+        this.tabletop.set_lenght(lenght);
+        this.tabletop.set_widht(wight);
+        this.tabletop.set_tabletop_material(tabletop_material);
+        this.made_in = made_in;
     }
 
     String get_made_in() {
         return made_in;
     }
 
-    String get_tabletop_material() {
-        return tabletop_material;
+    void change_legs(int new_count_legs, String new_legs_material) {
+        legs.change_legs(new_count_legs, new_legs_material);
+        made_in = "hand-made";
+    }
+
+    void change_tabletop(float new_lenght, float new_widht, String new_tabletop_material, String new_tabletop_colour) {
+        tabletop.change_tabletop(new_lenght, new_widht, new_tabletop_material, new_tabletop_colour);
+        made_in = "hand-made";
+    }
+
+    int get_count_legs() {
+        return legs.get_count_legs();
+    }
+
+    int get_high() {
+        return legs.get_high();
     }
 
     String get_legs_material() {
-        return legs_material;
+        return legs.get_legs_material();
     }
 
-    String get_tabletop_colour() {
-        return tabletop_colour;
+    public float get_lenght() {
+        return tabletop.get_lenght();
     }
 
-    void change_tabletop_colour(String new_colour) {
-        tabletop_colour = new_colour;
-        made_in = "hand-made";
+    public float get_widht() {
+        return tabletop.get_widht();
     }
 
-    void change_tabletop(String new_material) {
-        tabletop_material = new_material;
-        made_in = "hand-made";
+    public String get_tabletop_material() {
+        return tabletop.get_tabletop_material();
     }
 
-    void change_legs(int new_count_legs, String new_legs_material) {
-        count_legs = new_count_legs;
-        legs_material = new_legs_material;
-        made_in = "hand-made";
+    public String get_tabletop_colour() {
+        return tabletop.get_tabletop_colour();
     }
 }
