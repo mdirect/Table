@@ -1,5 +1,9 @@
-package com.company;
-// не упустить обработку ошибок у класса и наследника
+package com.company.example_exceptions;
+
+import com.company.example_exceptions.A;
+import com.company.example_exceptions.B;
+import com.company.example_exceptions.C;
+
 public class Main_ab {
     public static void main(String[] args) {
         C c = new C();

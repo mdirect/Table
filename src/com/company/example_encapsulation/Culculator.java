@@ -1,4 +1,4 @@
-package com.company;
+package com.company.example_encapsulation;
 
 import java.sql.SQLOutput;
 

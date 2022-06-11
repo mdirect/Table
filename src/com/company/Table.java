@@ -6,8 +6,6 @@ public class Table {
     private String      made_in;
     int weight;
 
-//    Table(Legs legs, Tabletop tabletop)
-
     int set_weight(){
         return weight;
     }

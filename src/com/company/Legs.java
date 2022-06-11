@@ -1,8 +1,4 @@
 package com.company;
-//array ног
-class Error extends Exception {
-    //реализовать для ног
-}
 
 public class Legs {
     private int     count_legs;

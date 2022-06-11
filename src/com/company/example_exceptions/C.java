@@ -1,4 +1,4 @@
-package com.company;
+package com.company.example_exceptions;
 
 public class C {
     void doWorks() throws A {

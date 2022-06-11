@@ -1,4 +1,4 @@
-package com.company;
+package com.company.example_encapsulation;
 
 public class Main2 {
     public static void main(String[] args) {
@@ -7,12 +7,6 @@ public class Main2 {
         culc.setData(-3);
 //        culc.data = -3;
         culc.sqrt();
-
-
     }
 }
 
-/*
-1. Exception
-2. Наследование Стол -> Стол с разграничителем
- */

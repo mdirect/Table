@@ -3,9 +3,8 @@ package com.company;
 public class TableWithSeparator extends Table{
     private boolean separator = true;
     private String  model_separator;
-    int weight_separator; // взвесить стол со всеми предметами
+    int weight_separator;
 
-//    Table(Legs legs, Tabletop tabletop)
 
     int set_weight(){
         return weight;
@@ -27,5 +26,3 @@ public class TableWithSeparator extends Table{
         return separator;
     }
 }
-
-// интерфейс
