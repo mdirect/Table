@@ -1,28 +1,18 @@
 package com.company;
 
-public class TableWithSeparator extends Table{
-    private boolean separator = true;
-    private String  model_separator;
-    int weight_separator;
+public class TableWithSeparator extends Table implements TableInterface{
+    private Separator   separator;
 
-
-    int set_weight(){
-        return weight;
+    TableWithSeparator(Leg[] leg, Tabletop tabletop, Separator separator) {
+        super(leg, tabletop);
+        this.separator = separator;
     }
 
-    TableWithSeparator(int count_legs) {
-        super(count_legs);
-    }
+//    private void setWeight() {
+//        this.getWeight() = super.getWeight() + separator.getWeight();
+////        for (int i = 0; i < getCountLegs(); i++)
+////            this.weight += leg[i].getWeight();
+////        this.weight += this.tabletop.getWidht();
+//    }
 
-    TableWithSeparator(int count_legs, int high, float lenght, float wight, String tabletop_material, String made_in) {
-        super(count_legs, high, lenght, wight, tabletop_material, made_in);
-    }
-
-    public String getModel_separator() {
-        return model_separator;
-    }
-
-    public boolean getSeparator() {
-        return separator;
-    }
 }
