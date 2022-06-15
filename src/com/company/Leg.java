@@ -2,7 +2,7 @@ package com.company;
 
 public class Leg {
     private int     high;
-    private float     weight;
+    private float   weight;
     private String  material;
 
     public Leg(int high, float weight, String material) throws Errors{

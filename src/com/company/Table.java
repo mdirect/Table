@@ -17,7 +17,7 @@ public class Table implements TableInterface{
         this.countLegs = leg.length;
     }
 
-    private void setWeight() {
+    private void setWeight() { //get
         this.weight = 0;
         for (Leg l: this.leg)
             this.weight += l.getWeight();

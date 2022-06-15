@@ -3,7 +3,7 @@ package com.company;
 public class Separator {
     private int     high;
     private int     lenght;
-    private float     weight;
+    private float   weight;
     private String  material;
 
     public Separator(int high, int lenght, float weight, String material) throws Errors{
