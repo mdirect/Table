@@ -5,22 +5,22 @@ public class Leg {
     private float   weight;
     private String  material;
 
-    public Leg(int high, float weight, String material) throws Errors{
+    public Leg(int high, float weight, String material) throws NotPositiveValue {
         setHigh(high);
         setWeight(weight);
         setMaterial(material);
     }
 
-    public void setHigh(int high) throws Errors{
+    public void setHigh(int high) throws NotPositiveValue {
         if (high <= 1) {
-            throw new Errors("Внимание! Неккоректная высота ножки!");
+            throw new NotPositiveValue("Внимание! Неккоректная высота ножки!");
         }
         this.high = high;
     }
 
-    public void setWeight(float weight) throws Errors{
+    public void setWeight(float weight) throws NotPositiveValue {
         if (weight <= 0) {
-            throw new Errors("Внимание! Неккоректный вес ножки!");
+            throw new NotPositiveValue("Внимание! Неккоректный вес ножки!");
         }
         this.weight = weight;
     }

@@ -6,30 +6,30 @@ public class Separator {
     private float   weight;
     private String  material;
 
-    public Separator(int high, int lenght, float weight, String material) throws Errors{
+    public Separator(int high, int lenght, float weight, String material) throws NotPositiveValue {
         setHigh(high);
         setLenght(lenght);
         setWeight(weight);
         setMaterial(material);
     }
 
-    public void setHigh(int high) throws Errors{
+    public void setHigh(int high) throws NotPositiveValue {
         if (high <= 1) {
-            throw new Errors("Внимание! Неккоректная высота разделителя!");
+            throw new NotPositiveValue("Внимание! Неккоректная высота разделителя!");
         }
         this.high = high;
     }
 
-    public void setWeight(float weight) throws Errors{
+    public void setWeight(float weight) throws NotPositiveValue {
         if (weight <= 0) {
-            throw new Errors("Внимание! Неккоректный вес разделителя!");
+            throw new NotPositiveValue("Внимание! Неккоректный вес разделителя!");
         }
         this.weight = weight;
     }
 
-    public void setLenght(int lenght) throws Errors{
+    public void setLenght(int lenght) throws NotPositiveValue {
         if (lenght <= 1) {
-            throw new Errors("Внимание! Неккоректная длинна разделителя!");
+            throw new NotPositiveValue("Внимание! Неккоректная длинна разделителя!");
         }
         this.lenght = lenght;
     }

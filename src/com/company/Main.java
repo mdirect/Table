@@ -1,16 +1,11 @@
 package com.company;
 
-import com.sun.tools.attach.VirtualMachine;
-import javax.management.ConstructorParameters;
-import java.lang.annotation.AnnotationFormatError;
-
 public class Main {
-    public static void main(String[] args) throws Errors {
+    public static void main(String[] args) throws NotPositiveValue {
         /*
-        1. Прописать геттеры и сеттеры для ног, столешницы и разделителя в классах стола
-        2. Прописать интерфейс пересчета веса для разных столов
-        3. Назвать класс ошибок более конкретно (NotPositiveValue)
-        4. Почитать про диспетчеризация типов
+        1. Почитать про диспетчеризация типов
+        2. Интерфейс
+        3. Класс машины, не впускать тяжелые столы
          */
 
         System.out.println("Task 3");
@@ -34,5 +29,8 @@ public class Main {
         separator = new Separator(50, 120, 0.2F, "пластик");
         tablewithseparator = new TableWithSeparator(leg2, tabletop2, separator);
 
+
+        System.out.println("Вес стола " + table.getWeight());
+        System.out.println("Вес стола с разделителем " + tablewithseparator.getWeight());
     }
 }

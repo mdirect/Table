@@ -6,30 +6,30 @@ public class Tabletop {
     protected float weight;
     private String  material;
 
-    public Tabletop(int lenght, int widht, float weight, String material) throws Errors{
+    public Tabletop(int lenght, int widht, float weight, String material) throws NotPositiveValue {
         setWidht(widht);
         setLenght(lenght);
         setWeight(weight);
         setMaterial(material);
     }
 
-    public void setWidht(int widht) throws Errors{
+    public void setWidht(int widht) throws NotPositiveValue {
         if (widht <= 1) {
-            throw new Errors("Внимание! Неккоректная ширина столешницы!");
+            throw new NotPositiveValue("Внимание! Неккоректная ширина столешницы!");
         }
         this.widht = widht;
     }
 
-    public void setWeight(float weight) throws Errors{
+    public void setWeight(float weight) throws NotPositiveValue {
         if (weight <= 0) {
-            throw new Errors("Внимание! Неккоректный вес столешницы!");
+            throw new NotPositiveValue("Внимание! Неккоректный вес столешницы!");
         }
         this.weight = weight;
     }
 
-    public void setLenght(int lenght) throws Errors{
+    public void setLenght(int lenght) throws NotPositiveValue {
         if (lenght <= 1) {
-            throw new Errors("Внимание! Неккоректная длинна столешницы!");
+            throw new NotPositiveValue("Внимание! Неккоректная длинна столешницы!");
         }
         this.lenght = lenght;
     }

@@ -1,19 +1,25 @@
 package com.company;
 
-public class TableWithSeparator extends Table implements TableInterface{
+public class TableWithSeparator extends Table implements CalculateWeight {
     private Separator   separator;
+    private float       weight;
 
-    TableWithSeparator(Leg[] leg, Tabletop tabletop, Separator separator) {
-        super(leg, tabletop);
+    TableWithSeparator(Leg[] legs, Tabletop tabletop, Separator separator) {
+        super(legs, tabletop);
         this.separator = separator;
+        this.weight = super.getWeight() + this.separator.getWeight();
     }
 
-//    private void setWeight() {
-//        this.getWeight() = super.getWeight() + separator.getWeight();
-////        for (int i = 0; i < getCountLegs(); i++)
-////            this.weight += leg[i].getWeight();
-////        this.weight += this.tabletop.getWidht();
-//    }
+    public Separator getSeparator() {
+        return separator;
+    }
 
+    public float getWeight() {
+        return weight;
+    }
+
+//    public float calculateWeight() {
+//        return super.calculateWeight() + this.separator.getWeight();
+//    }
 }
 

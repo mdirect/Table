@@ -1,35 +1,34 @@
 package com.company;
 
-public class Table implements TableInterface{
-    private Leg[]       leg;
+public class Table implements CalculateWeight {
+    private Leg[]       legs;
     private Tabletop    tabletop;
     private float       weight;
-    private int         countLegs;
 
-    Table(Leg[] leg, Tabletop tabletop) {
+    Table(Leg[] legs, Tabletop tabletop) {
         this.tabletop = tabletop;
-        this.leg = leg;
-        setWeight();
-        setCountLegs();
+        this.legs = legs;
+        this.weight = calculateWeight();
     }
 
-    private void setCountLegs() {
-        this.countLegs = leg.length;
-    }
-
-    private void setWeight() { //get
-        this.weight = 0;
-        for (Leg l: this.leg)
-            this.weight += l.getWeight();
-        this.weight += this.tabletop.getWidht();
-    }
-
-    public int getCountLegs() {
-        return countLegs;
+    public float calculateWeight() {
+        float weight = 0;
+        for (Leg leg: this.legs)
+            weight += leg.getWeight();
+        weight += this.tabletop.getWeight();
+        return weight;
     }
 
     public float getWeight() {
         return weight;
+    }
+
+    public Leg[] getLegs() {
+        return legs;
+    }
+
+    public Tabletop getTabletop() {
+        return tabletop;
     }
 
 }
