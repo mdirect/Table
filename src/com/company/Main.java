@@ -1,14 +1,13 @@
 package com.company;
 
 public class Main {
-    public static void main(String[] args) throws NotPositiveValue {
+    public static void main(String[] args) throws NotPositiveValue, BigWeight {
         /*
         1. Почитать про диспетчеризация типов
         2. Интерфейс
         3. Класс машины, не впускать тяжелые столы
          */
 
-        System.out.println("Task 3");
         Leg[]               leg = new Leg[4];
         Tabletop            tabletop;
         Table               table;
@@ -16,6 +15,9 @@ public class Main {
         Tabletop            tabletop2;
         Separator           separator;
         TableWithSeparator  tablewithseparator;
+        Table[]             tables1 = new Table[2];
+        Table[]             tables2 = new Table[1];
+        Vehincle            car;
 
 
         for (int i = 0; i < 4; i++)
@@ -32,5 +34,36 @@ public class Main {
 
         System.out.println("Вес стола " + table.getWeight());
         System.out.println("Вес стола с разделителем " + tablewithseparator.getWeight());
+
+        tables1[0] = table;
+        tables1[1] = tablewithseparator;
+        tables2[0] = tablewithseparator;
+        car = new Vehincle(4.8F);
+
+
+        System.out.println("Загружено в машину: " + car.getWeightTables() + " кг.");
+        System.out.println("Свободно в машине: " + car.getFreeWeight() + " кг.");
+
+        try {
+            car.loadTables(tables1);
+        } catch (BigWeight exc) {
+            System.out.println(exc.getMessage());
+        }
+        try {
+            car.loadTables(tables2);
+        } catch (BigWeight exc) {
+            System.out.println(exc.getMessage());
+        }
+
+        System.out.println("Загружено в машину: " + car.getWeightTables() + " кг.");
+        System.out.println("Свободно в машине: " + car.getFreeWeight() + " кг.");
+
+
+        /*
+            1. Обобщения (написать пример)
+            2. Коллекции (list, set, map, Queue), изучить реализацию интерфейсов
+            3. Различие интерфесов и абстрактных классов
+            4. 
+         */
     }
 }

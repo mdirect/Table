@@ -17,9 +17,5 @@ public class TableWithSeparator extends Table implements CalculateWeight {
     public float getWeight() {
         return weight;
     }
-
-//    public float calculateWeight() {
-//        return super.calculateWeight() + this.separator.getWeight();
-//    }
 }
 
